@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="stylesheet" type="text/css" href="small.css" media="(max-width: 1000px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <title>Project Detail</title>
+
+
+    <style>
+        pre{font-size: 40px; text-align: left; padding: 30px; font-family: 'Chewy', cursive; width: 100%;}
+        Header h1{font-size: 70px;}
+
+        @media (max-width: 900px) {
+            pre{font-size: 12px; text-align: left; padding: 0px; font-family: 'Chewy', cursive; width: 100%;}
+            article{padding: 0px; margin: 0px;}
+            header h1{font-size: 40px;}
+            .profile-img{height: 80%; width: 25%;}
+
+        }
+    </style>
+
+</head>
+<body>
+    <section class="container">
+
+        <section id="navbar">
+
+
+            <nav>
+
+
+                <div class="logo">
+                    
+                    <img src="/img/d03efca5-2f44-4e99-b0c3-41237027eb9f.png" alt="profile-img" class="profile-img">
+                    
+                    <h2 class="my-name">ALAA ANAN</h2>
+                </div>
+
+                <input type="checkbox" id="click">
+                <label for="click" class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+
+                <ul>
+                    <li><a href="{% url 'index' %}">HOME</a></li>
+                </ul>
+            </nav>      
+        </section>
+
+        
+        <section id="project-detail-page">
+            
+
+            <Header>
+                <h1>{{ project.title }}</h1>
+            </Header>
+            
+
+            <div class="img-tech">
+                <div class="date-img">
+                    <img src="{{ project.image.url }}" class="project-img">
+                    <p class="date">Aug 6 2021</p>
+                </div>
+                <div clss="tec">
+                    <h2>Tecnology</h2>
+                    <ul>
+                        <li>- {{ project.tech }}</li>
+                    </ul>
+                    
+                    <h2>THE CODE</h2>
+                    <div class="iconss">
+
+                        <a href="https://github.com/alaa-anan1">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="https://Week-2-One-Month-HtmlandCss-Course.lilo2525.repl.co">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.tFU3mHTRR_f9ix5rPkwyyQAAAA%26pid%3DApi&f=1" class="icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <Header>
+                <h1>{{ project.brief }}</h1>
+            </Header>
+
+            <article>
+                <p><pre>{{ project.description }}</pre></p>
+
+            </article>
+
+        </section>
+        
+        
+    </section>
+</body>
+</html>
